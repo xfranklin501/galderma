@@ -265,13 +265,36 @@
                         <img src="img/fas-use.png" />
                     </div>
                     <div id="fas" class="fas-tool">
-                        <canvas id="myCanvas" style="border:1px solid #d3d3d3;">
+                        <canvas id="myCanvas">
                             Your browser does not support the HTML5 canvas tag.</canvas>
                     </div>
                     <div class="evaluation">
-                        <canvas id="evaluationCanvas" width="200" height="150"
-                            style="border:1px solid #d3d3d3;background-color: #F2F5FC;">
-                            Your browser does not support the HTML5 canvas tag.</canvas>
+                        <fieldset>
+                            <div class="dehydration">
+                                <span class="text-header">Dehydration</span>
+                                <div class="some-class line-container">
+                                    <span class="line arrow-right"></span>
+                                    <div class="radio-container">
+                                        <input type="radio" class="radio" name="x" />
+                                        <input type="radio" class="radio" name="x" />
+                                        <input type="radio" class="radio" name="x" />
+                                        <input type="radio" class="radio" name="x" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="scars">
+                            <span class="text-header">Scars</span>
+                            <div class="some-class line-container">
+                                <span class="line arrow-right"></span>
+                                <div class="radio-container">
+                                    <input type="radio" class="radio" name="y" />
+                                    <input type="radio" class="radio" name="y" />
+                                    <input type="radio" class="radio" name="y" />
+                                    <input type="radio" class="radio" name="y" />
+                                </div>
+                            </div>
+                        </div>
+                        </fieldset>
                     </div>
                 </div>
             </div>
@@ -504,99 +527,6 @@
             });
         }
 
-        var eCanvasLines = [[[20, 25], [60, 25], [100, 25], [140, 25]], [[20, 95], [60, 95], [100, 95], [140, 95]]];
-
-        var eCanvas = document.getElementById("evaluationCanvas");
-        ectx = eCanvas.getContext('2d');
-
-        ectx.font = "10px verdana, sans-serif ";
-        ectx.fillStyle = "#000"
-        ectx.fillText('Dehydration', 11, 10);
-        ectx.fillText('Scars', 11, 77);
-
-        drawArrow(ectx, 20, 25, 190, 25, 1, "#e4ddec")
-        drawArrow(ectx, 20, 95, 190, 95, 1, "#e4ddec");
-
-        /** First line circles*/
-
-        ectx.beginPath();
-        ectx.arc(20, 25, 7, 0, 2 * Math.PI);
-        ectx.fillStyle = '#e0dcee';
-        ectx.fill();
-        ectx.stroke();
-        ectx.font = "bold 10px verdana, sans-serif ";
-        ectx.fillStyle = "#000"
-        ectx.fillText('0', 16, 42);
-
-
-        ectx.beginPath();
-        ectx.arc(60, 25, 7, 0, 2 * Math.PI);
-        ectx.fillStyle = '#e0dcee';
-        ectx.fill();
-        ectx.font = "bold 10px verdana, sans-serif ";
-        ectx.fillStyle = "#000"
-        ectx.fillText('1', 56, 42);
-        ectx.stroke();
-
-
-        ectx.beginPath();
-        ectx.arc(100, 25, 7, 0, 2 * Math.PI);
-        ectx.fillStyle = '#e0dcee';
-        ectx.fill();
-        ectx.font = "bold 10px verdana, sans-serif ";
-        ectx.fillStyle = "#000"
-        ectx.fillText('2', 96, 42);
-        ectx.stroke();
-
-
-        ectx.beginPath();
-        ectx.arc(140, 25, 7, 0, 2 * Math.PI);
-        ectx.fillStyle = '#e0dcee';
-        ectx.fill();
-        ectx.stroke();
-        ectx.font = "bold 10px verdana, sans-serif ";
-        ectx.fillStyle = "#000"
-        ectx.fillText('3', 136, 42);
-
-        /** Second line circles*/
-
-        ectx.beginPath();
-        ectx.arc(20, 95, 7, 0, 2 * Math.PI);
-        ectx.fillStyle = '#e0dcee';
-        ectx.fill();
-        ectx.stroke();
-        ectx.font = "bold 10px verdana, sans-serif ";
-        ectx.fillStyle = "#000"
-        ectx.fillText('0', 16, 95 + 12 + 5);
-
-        ectx.beginPath();
-        ectx.arc(60, 95, 7, 0, 2 * Math.PI);
-        ectx.fillStyle = '#e0dcee';
-        ectx.fill();
-        ectx.stroke();
-        ectx.font = "bold 10px verdana, sans-serif ";
-        ectx.fillStyle = "#000"
-        ectx.fillText('1', 56, 95 + 12 + 5);
-
-        ectx.beginPath();
-        ectx.arc(100, 95, 7, 0, 2 * Math.PI);
-        ectx.fillStyle = '#e0dcee';
-        ectx.fill();
-        ectx.stroke();
-        ectx.font = "bold 10px verdana, sans-serif ";
-        ectx.fillStyle = "#000"
-        ectx.fillText('2', 96, 95 + 12 + 5);
-
-        ectx.beginPath();
-        ectx.arc(140, 95, 7, 0, 2 * Math.PI);
-        ectx.fillStyle = '#e0dcee';
-        ectx.fill();
-        ectx.stroke();
-        ectx.font = "bold 10px verdana, sans-serif ";
-        ectx.fillStyle = "#000"
-        ectx.fillText('3', 136, 95 + 12 + 5);
-
-
         var squareSize = 500;
         var canvas = document.getElementById("myCanvas");
         canvas.width = squareSize;
@@ -788,22 +718,12 @@
             ctx.fillText("2", 246, 132);
             ctx.fillText("3", 246, 93);
 
+            ctx.fillText("0", 216, 284);
+            ctx.fillText("1", 192, 308);
+            ctx.fillText("2", 160, 340);
+            ctx.fillText("3", 131, 370);
+
         }
-
-        eCanvas.addEventListener("click", function (event) {
-            if (!eCanvasLines.length) {
-                return;
-            }
-            for (var t = 0; t < eCanvasLines.length; t++) {
-                for (var g = 0; g < eCanvasLines[t].length; g++) {
-                    if (isPointInPatheCanvas(event, eCanvasLines[t][g][0], eCanvasLines[t][g][1])) {
-                        ectx.fillStyle = '#000';
-                        ectx.fill();
-                    }
-                }
-            }
-
-        });
 
         canvas.addEventListener("click", function (event) {
             if (!lines.length) {
@@ -939,16 +859,6 @@
             }
         }
 
-        function isPointInPatheCanvas(evt, cx, cy) {
-
-            var x = evt.pageX - eCanvas.offsetLeft;
-            var y = evt.pageY - eCanvas.offsetTop;
-            if (Math.pow(x - cx, 2) + Math.pow(y - cy, 2) < Math.pow(10, 2)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
 
         function getPoint(c1, c2, radius, angle) {
             return [c1 + Math.cos(angle) * radius, c2 + Math.sin(angle) * radius];
